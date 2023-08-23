@@ -7,24 +7,24 @@ The Meet App is a progressive web application developed using React with a focus
 
 ## How Serverless Functions are Utilized
 
-Serverless functions play a crucial role in enhancing the Meet App's functionality, scalability, and responsiveness. Here's how serverless functions are used in the app:
+Serverless functions are important to the Meet App's functionality, scalability, and responsiveness. Serverless functions are used in the following ways:
 
 1. **Data Fetching and Processing:**
-   Serverless functions are employed to fetch event data from the Google Calendar API. These functions can also process and transform the data before sending it to the frontend. By offloading data fetching and processing to serverless functions, the app ensures efficient data retrieval and minimizes frontend load.
+   Serverless functions are implemented to fetch event data from the Google Calendar API. The app ensures efficient data retrieval and minimizes frontend load.
 
 2. **Authorization and Authentication:**
-   Serverless functions handle OAuth2 authentication with the Google Calendar API. These functions securely manage user authentication, generate access tokens, and ensure that users can access the requested data securely.
+   Serverless functions handle OAuth2 authentication with the Google Calendar API. They manage user authentication, create access tokens, and ensure that users can access the requested data securely.
 
 3. **Offline Support and Cache Management:**
    Serverless functions facilitate offline support by managing cached data. When the app is offline, these functions retrieve cached data, enabling users to view previously accessed event information without an internet connection.
 
-4. **Dynamic Pricing and Recommendations (Optional):**
+4. **Dynamic Pricing and Recommendations:**
    If dynamic pricing or personalized recommendations are implemented, serverless functions can calculate pricing based on real-time factors or generate personalized event suggestions for users.
 
 5. **Data Visualization Calculation:**
-   Serverless functions compute and aggregate data required for generating charts that visualize event details. These functions process event data to determine the number of events in each city or the popularity of different event genres.
+   Serverless functions compute and aggregate data to determine the number of events in each city or the popularity of different event genres.
 
-6. **Backend API for User-Specific Data (Optional):**
+6. **Backend API for User-Specific Data:**
    Serverless functions can serve as APIs for managing user-related data, such as favorites, preferences, and settings. This ensures that user-specific data is stored securely and can be accessed when needed.
 
 
