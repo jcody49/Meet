@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-The Meet App is a progressive web application developed using React with a focus on serverless architecture and test-driven development (TDD). The app integrates with the Google Calendar API to fetch upcoming events and provides a range of features, including event filtering, toggling event details, specifying event count, offline support, home screen shortcut, and data visualization.
+The Meet App is a progressive web application developed with React and focuses on serverless architecture and test-driven development (TDD). The app integrates with the Google Calendar API to fetch upcoming events and provides a range of features, including event filtering, toggling event details, specifying event count, offline support, home screen shortcut, and data visualization.
 
 
 ## How Serverless Functions are Utilized
