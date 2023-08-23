@@ -1,5 +1,33 @@
 # Meet App 
 
+## Project Overview
+
+The Meet App is a progressive web application developed using React with a focus on serverless architecture and test-driven development (TDD). The app integrates with the Google Calendar API to fetch upcoming events and provides a range of features, including event filtering, toggling event details, specifying event count, offline support, home screen shortcut, and data visualization.
+
+
+## How Serverless Functions are Utilized
+
+Serverless functions play a crucial role in enhancing the Meet App's functionality, scalability, and responsiveness. Here's how serverless functions are used in the app:
+
+1. **Data Fetching and Processing:**
+   Serverless functions are employed to fetch event data from the Google Calendar API. These functions can also process and transform the data before sending it to the frontend. By offloading data fetching and processing to serverless functions, the app ensures efficient data retrieval and minimizes frontend load.
+
+2. **Authorization and Authentication:**
+   Serverless functions handle OAuth2 authentication with the Google Calendar API. These functions securely manage user authentication, generate access tokens, and ensure that users can access the requested data securely.
+
+3. **Offline Support and Cache Management:**
+   Serverless functions facilitate offline support by managing cached data. When the app is offline, these functions retrieve cached data, enabling users to view previously accessed event information without an internet connection.
+
+4. **Dynamic Pricing and Recommendations (Optional):**
+   If dynamic pricing or personalized recommendations are implemented, serverless functions can calculate pricing based on real-time factors or generate personalized event suggestions for users.
+
+5. **Data Visualization Calculation:**
+   Serverless functions compute and aggregate data required for generating charts that visualize event details. These functions process event data to determine the number of events in each city or the popularity of different event genres.
+
+6. **Backend API for User-Specific Data (Optional):**
+   Serverless functions can serve as APIs for managing user-related data, such as favorites, preferences, and settings. This ensures that user-specific data is stored securely and can be accessed when needed.
+
+
 ## User Stories & Scenarios
 
 ### Feature 1: Filter Events By City
@@ -67,9 +95,7 @@ Given the user has navigated to the events page,
 When the user filters by city via typing it into a form,
 Then the user will see a list of events scheduled in the given city.
 
-## Project Overview
 
-The Meet App is a progressive web application developed using React with a focus on serverless architecture and test-driven development (TDD). The app integrates with the Google Calendar API to fetch upcoming events and provides a range of features, including event filtering, toggling event details, specifying event count, offline support, home screen shortcut, and data visualization.
 
 
 
