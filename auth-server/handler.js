@@ -5,7 +5,7 @@ const calendar = google.calendar("v3");
 const SCOPES = ["https://www.googleapis.com/auth/calendar.events.public.readonly"];//sets access level--READ only
 const { CLIENT_SECRET, CLIENT_ID, CALENDAR_ID } = process.env;//value being referred to is in the config.json file--keeps api values hidden
 const redirect_uris = [
-  "https://jcody49.github.io/meet/"
+  "https://jcody49.github.io/Meet/"
 ];
 
 
