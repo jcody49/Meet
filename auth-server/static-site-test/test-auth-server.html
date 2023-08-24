@@ -47,7 +47,7 @@
         const resultElement = document.getElementById("result");
         const resultLink = document.getElementById("authURL");
         // Replace this with your own endpoint
-        const getAuthURL = "https://ekcr34y5v7.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url";
+        const getAuthURL = "https://hayq3gp460.execute-api.us-east-1.amazonaws.com/dev/api/get-auth-url";
   
         getAuthUrlButton.onclick = function () {
           fetch(getAuthURL)
@@ -67,7 +67,7 @@
         const getAccessToken = document.getElementById("getToken");
         const accessTokenElement = document.getElementById("accessToken");
         const getToken =
-            "https://ekcr34y5v7.execute-api.eu-central-1.amazonaws.com/dev/api/token/{code}";
+            "https://hayq3gp460.execute-api.us-east-1.amazonaws.com/dev/api/token/{code}";
 
         getAccessToken.onclick = function () {
             let code = codeValue.value;
