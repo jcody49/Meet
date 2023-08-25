@@ -24,6 +24,13 @@ functions:
           path: api/token/{code} #takes {code} from previous function
           method: get
           cors: true
+  getCalendarEvents:
+    handler: handler.getCalendarEvents
+    events:
+      - http:
+          path: api/get-events/{access_token} #takes {access_token} from previous function
+          method: get
+          cors: true
 
 
 
