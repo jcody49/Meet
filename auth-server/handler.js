@@ -1,5 +1,6 @@
 'use strict';
 
+
 const { google } = require("googleapis");//package needed from Google
 const calendar = google.calendar("v3");
 const SCOPES = ["https://www.googleapis.com/auth/calendar.events.public.readonly"];//sets access level--READ only
@@ -71,6 +72,10 @@ module.exports.getAccessToken = async (event) => {
     // Handle error
     return {
       statusCode: 500,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": true,
+      },
       body: JSON.stringify(error),
     };
   });

@@ -73,11 +73,14 @@
 
         getAccessToken.onclick = function () {
             let code = codeValue.value;
+            console.log("Original Code:", code);
 
         // if the authorization code is not URL-encoded, then URL-encode it.
         if (decodeURIComponent(code) === code) {
         code = encodeURIComponent(codeValue.value);
         }
+        // Log the code value after encoding
+        console.log("Encoded Code:", code);
         const getTokenRequest = getToken +  "/" + code;
         fetch(getTokenRequest)
         .then(function (response) {
