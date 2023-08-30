@@ -2,6 +2,8 @@
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import CitySearch from '../components/CitySearch';
+import { getEvents } from '../api';
+import EventList from '../components/EventList';
 
 describe('<CitySearch /> component', () => {
   let CitySearchComponent;
@@ -27,4 +29,12 @@ describe('<CitySearch /> component', () => {
     expect(suggestionList).toBeInTheDocument();
     expect(suggestionList).toHaveClass('suggestions');
   });
+
+  test('renders correct number of events', async () => {
+    const EventListComponent = render(<EventList events={[]} />); // Initial render with empty array
+    const allEvents = await getEvents();
+    EventListComponent.rerender(<EventList events={allEvents} />); // Rerender with actual events
+    expect(EventListComponent.getAllByRole("listitem")).toHaveLength(allEvents.length);
+  });
+
 });
