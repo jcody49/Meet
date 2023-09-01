@@ -1,34 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
+// The Event component receives an 'event' prop containing event data
 const Event = ({ event }) => {
+    // Use state to keep track of whether details should be shown or hidden
+  const [showDetails, setShowDetails] = useState(false);
+  // Toggle the state when the "Show Details" button is clicked
+  const toggleDetails = () => {
+    setShowDetails(!showDetails);
+  };
+  
   return (
+    // List item for the event
     <li>
-      <p>kind: {event.kind}</p>
-      <p>etag: {event.etag}</p>
-      <p>ID: {event.id}</p>
-      <p>Status: {event.status}</p>
-      <p>HTML Link: {event.htmlLink}</p>
-      <p>Created: {event.created}</p>
-      <p>Updated: {event.updated}</p>
-      <h3>{event.summary}</h3>
-      <p>Description: {event.description}</p>
-      <p>Location: {event.location}</p>
-      <p>Creator Email: {event.creator.email}</p>
-      <p>Creator Self: {event.creator.self.toString()}</p>
-      <p>Organizer Email: {event.organizer.email}</p>
-      <p>Organizer Self: {event.organizer.self.toString()}</p>
-      <p>Start Date Time: {event.start.dateTime}</p>
-      <p>Start Time Zone: {event.start.timeZone}</p>
-      <p>End Date Time: {event.end.dateTime}</p>
-      <p>End Time Zone: {event.end.timeZone}</p>
-      <p>Recurring Event ID: {event.recurringEventId}</p>
-      <p>Original Start Date Time: {event.originalStartTime.dateTime}</p>
-      <p>Original Start Time Zone: {event.originalStartTime.timeZone}</p>
-      <p>iCal UID: {event.iCalUID}</p>
-      <p>Sequence: {event.sequence}</p>
-      <p>Reminders Use Default: {event.reminders.useDefault.toString()}</p>
-      <p>Event Type: {event.eventType}</p>
-      <button>Show Details</button>
+      <div className="event">
+        <h2 style={{ color: "#1e847f" }}>{event.summary}</h2>
+        <div className="location">{event.location}</div>
+        <div className="dateTime">{event.start.dateTime}</div>
+        {showDetails && <div className="description">{event.description}</div>}
+        <button className="details-btn" onClick={toggleDetails}>
+          {showDetails ? "Hide Details" : "Show Details"}
+        </button>
+      </div>
     </li>
   );
 };

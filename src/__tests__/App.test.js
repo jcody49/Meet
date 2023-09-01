@@ -15,4 +15,10 @@ describe('<App /> component', () => {
     test('render CitySearch', () => {
         expect(AppDOM.querySelector('#city-search')).toBeInTheDocument();
     });
+
+    test('renders NumberOfEvents component', () => {
+        const { container } = render(<App />);
+        const numberOfEventsComponent = container.firstChild.querySelector('#number-of-events');
+        expect(numberOfEventsComponent).toBeInTheDocument();
+    });
 });
