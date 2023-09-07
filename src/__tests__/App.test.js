@@ -1,24 +1,24 @@
 import { render } from '@testing-library/react';
 import App from '../App';
 
-
+/* eslint-disable */
 
 describe('<App /> component', () => {
-    let AppDOM;
-    beforeEach(() => {
-        AppDOM = render(<App />).container.firstChild;
-    })
-    test('renders list of events', () => {
-        expect(AppDOM.querySelector('#event-list')).toBeInTheDocument();
-    });
-    
-    test('render CitySearch', () => {
-        expect(AppDOM.querySelector('#city-search')).toBeInTheDocument();
-    });
+  let AppDOM;
 
-    test('renders NumberOfEvents component', () => {
-        const { container } = render(<App />);
-        const numberOfEventsComponent = container.firstChild.querySelector('#number-of-events');
-        expect(numberOfEventsComponent).toBeInTheDocument();
-    });
+  beforeEach(() => {
+    AppDOM = render(<App />).container;
+  });
+  
+  test('renders list of events', () => {
+    expect(AppDOM.querySelector('#event-list')).toBeInTheDocument();
+  });
+  
+  test('renders CitySearch', () => {
+    expect(AppDOM.querySelector('#city-search')).toBeInTheDocument();
+  });
+
+  test('renders NumberOfEvents component', () => {
+    expect(AppDOM.querySelector('#number-of-events')).toBeInTheDocument();
+  });
 });

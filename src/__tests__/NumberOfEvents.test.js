@@ -2,6 +2,8 @@ import userEvent from '@testing-library/user-event';
 import NumberOfEvents from '../components/NumberOfEvents';
 import { render } from '@testing-library/react';
 
+/* eslint-disable */
+
 describe('<NumberOfEvents /> Component', () => {
   let NumberOfEventsComponent;
   beforeEach(() => {
