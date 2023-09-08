@@ -1,18 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 
-
-
-
-
-
-
-
-
-
-
-
-
 const CitySearch = ({ allLocations, setCurrentCity }) => {
     const [showSuggestions, setShowSuggestions] = useState(false);
     const [query, setQuery] = useState("");
