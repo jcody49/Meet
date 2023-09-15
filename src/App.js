@@ -12,6 +12,12 @@ const App = () => {
   const [allLocations, setAllLocations] = useState([]);
   const [currentCity, setCurrentCity] = useState("See all cities");
 
+  // Define setErrorAlert function
+  const setErrorAlert = (message) => {
+    // Implement your error handling logic here
+    console.error(message);
+  };
+
   useEffect(() => {
     fetchData();
   }, [currentCity]);
@@ -31,7 +37,7 @@ const App = () => {
         allLocations={allLocations} 
         setCurrentCity={setCurrentCity} 
       />
-      <NumberOfEvents />
+      <NumberOfEvents setErrorAlert={setErrorAlert} setCurrentNOE={setCurrentNOE} />
       <EventList events={events}/>
     </div>
   );

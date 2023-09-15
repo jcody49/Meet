@@ -3,6 +3,7 @@ const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
       const value = event.target.value;
   
       if (isNaN(value)) {
+        console.log("Value is not a number:", value);
         setErrorAlert('value is not a number');
       } else if (value > 50) {
         setErrorAlert('maximum value is 50');
