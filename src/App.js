@@ -30,7 +30,6 @@ const App = () => {
     } else {
       setWarningAlert("Events have been loaded from cache and may not be up to date")
     }
-    
     fetchData();
   }, [currentCity, currentNOE]);
 
@@ -55,7 +54,9 @@ const App = () => {
         allLocations={allLocations}
         setCurrentCity={setCurrentCity}
         setInfoAlert={setInfoAlert} />
-      <NumberOfEvents setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} />
+      <NumberOfEvents 
+      setCurrentNOE={setCurrentNOE} 
+      setErrorAlert={setErrorAlert} />
       <CityEventsChart allLocations={allLocations} events={events} />
       <EventList events={events} />
     </div>
