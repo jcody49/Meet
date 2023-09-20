@@ -1,7 +1,8 @@
 import CitySearch from './components/CitySearch';
 import EventList from './components/EventList';
 import NumberOfEvents from './components/NumberOfEvents';
-import CityEventsChart from './components/CityEventsChart'
+import CityEventsChart from './components/CityEventsChart';
+import EventGenresChart from './components/EventGenresChart';
 import { useEffect, useState } from 'react';
 import { extractLocations, getEvents } from './api';
 import { InfoAlert, ErrorAlert, WarningAlert } from './components/Alert';
@@ -57,7 +58,10 @@ const App = () => {
       <NumberOfEvents 
       setCurrentNOE={setCurrentNOE} 
       setErrorAlert={setErrorAlert} />
-      <CityEventsChart allLocations={allLocations} events={events} />
+      <div className='charts-container'>
+        <CityEventsChart events={events} />
+        <EventGenresChart allLocations={allLocations} events={events} />
+      </div>
       <EventList events={events} />
     </div>
  );
