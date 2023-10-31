@@ -1,5 +1,9 @@
 import { Component } from 'react';
 
+/**
+ * The `Alert` component for displaying customizable alerts.
+ * @class
+ */
 class Alert extends Component {
   constructor(props) {
     super(props);
@@ -7,6 +11,10 @@ class Alert extends Component {
     this.bgColor = null;
   }
 
+  /**
+   * Get the inline style for the alert.
+   * @returns {Object} The CSS style object for the alert.
+   */
   getStyle = () => {
     return {
       color: this.color,
@@ -32,6 +40,10 @@ class Alert extends Component {
   }
 }
 
+/**
+ * The `InfoAlert` component, a specialized alert for displaying information.
+ * @class
+ */
 class InfoAlert extends Alert {
     constructor(props) {
       super(props);
@@ -40,6 +52,10 @@ class InfoAlert extends Alert {
     }
 }
 
+/**
+ * The `ErrorAlert` component, a specialized alert for displaying errors.
+ * @class
+ */
 class ErrorAlert extends Alert {
     constructor(props) {
         super(props);
@@ -48,6 +64,10 @@ class ErrorAlert extends Alert {
     }
 }
 
+/**
+ * The `WarningAlert` component, a specialized alert for displaying warnings.
+ * @class
+ */
 class WarningAlert extends Alert {
     constructor(props) {
         super(props);

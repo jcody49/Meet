@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 
-// The Event component receives an 'event' prop containing event data
+/**
+ * The `Event` component displays details of an event and allows the user to toggle event details.
+ * @param {Object} props - The properties passed to the component.
+ * @param {Object} props.event - The event data to be displayed.
+ * @returns {JSX.Element} The rendered Event component.
+ */
 const Event = ({ event }) => {
   // Use state to keep track of whether details should be shown or hidden
   const [showDetails, setShowDetails] = useState(false);
-  // Toggle the state when the "Show Details" button is clicked
+  
+  /**
+   * Toggle the display of event details.
+   */
   const toggleDetails = () => {
     setShowDetails(!showDetails);
   };

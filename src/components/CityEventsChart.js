@@ -1,6 +1,13 @@
 import { useState, useEffect } from "react";
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
+/**
+ * The `CityEventsChart` component displays a scatter chart of event counts in different cities.
+ * @param {Object} props - The properties passed to the component.
+ * @param {Array} props.events - An array of event data.
+ * @param {Array} props.allLocations - An array of all available city locations.
+ * @returns {JSX.Element} The rendered CityEventsChart component.
+ */
 const CityEventsChart = ({events, allLocations}) => {
     const [data, setData] = useState([]);
 
@@ -10,7 +17,10 @@ const CityEventsChart = ({events, allLocations}) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [`${events}`]);
 
-    // get number of events in each city
+    /**
+     * Get the number of events in each city and format the data for the scatter chart.
+     * @returns {Array} An array of objects with city and event count data.
+     */
     const getData = () => {
         const data = allLocations.map((location) => {
             const count = events.filter((event) => event.location === location).length;

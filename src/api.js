@@ -10,12 +10,22 @@
 import mockData from './mock-data';
 import NProgress from "nprogress";
 
+/**
+ * Extracts unique event locations from an array of events.
+ * @param {Array} events - An array of event objects.
+ * @returns {Array} An array of unique event locations.
+ */
 export const extractLocations = (events) => {
     const extractedLocations = events.map((event) => event.location);
     const locations = [...new Set(extractedLocations)];
     return locations;
 };
   
+/**
+ * Checks the validity of an access token by making an HTTP request.
+ * @param {string} accessToken - The access token to be checked.
+ * @returns {Promise<Object>} A promise that resolves to the token information.
+ */
 const checkToken = async (accessToken) => {
     const response = await fetch(
       `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
@@ -24,6 +34,9 @@ const checkToken = async (accessToken) => {
     return result;
 };
 
+/**
+ * Removes query parameters from the current URL and updates the history state.
+ */
 const removeQuery = () => {
     let newurl;
     if (window.history.pushState && window.location.pathname) {
@@ -39,6 +52,10 @@ const removeQuery = () => {
     }
 };
 
+/**
+ * Retrieves events data from the API.
+ * @returns {Promise<Array>} A promise that resolves to an array of event objects.
+ */
 export const getEvents = async () => {
 
     if (window.location.href.startsWith("http://localhost")) {
@@ -66,6 +83,10 @@ export const getEvents = async () => {
     }
 };
 
+/**
+ * Retrieves the access token from local storage or initiates the authorization process.
+ * @returns {Promise<string>} A promise that resolves to the access token.
+ */
 export const getAccessToken = async () => {
     const accessToken = localStorage.getItem('access_token');
     const tokenCheck = accessToken && (await checkToken(accessToken));
@@ -87,6 +108,11 @@ export const getAccessToken = async () => {
     return accessToken;
 };
 
+/**
+ * Exchanges the authorization code for an access token.
+ * @param {string} code - The authorization code to be exchanged.
+ * @returns {Promise<string>} A promise that resolves to the access token.
+ */
 const getToken = async (code) => {
     const encodeCode = encodeURIComponent(code);
     const response = await fetch(
