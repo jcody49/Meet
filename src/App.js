@@ -43,13 +43,22 @@ const App = () => {
    * Fetches event data based on selected city and number of events.
    */
   const fetchData = async () => {
-    const allEvents = await getEvents();
-    const filteredEvents = currentCity === "See all cities" ?
-    allEvents :
-    allEvents.filter(event => event.location === currentCity)
-    setEvents(filteredEvents.slice(0, currentNOE));
-    setAllLocations(extractLocations(allEvents));
-  }
+    setIsLoading(true); // Set isLoading to true before loading data
+    try {
+        const allEvents = await getEvents();
+        const filteredEvents = currentCity === "See all cities" ?
+            allEvents :
+            allEvents.filter(event => event.location === currentCity);
+        setEvents(filteredEvents.slice(0, currentNOE));
+        setAllLocations(extractLocations(allEvents));
+    } catch (error) {
+        // Handle the error, for example, display an error message
+        console.error("Error fetching data:", error);
+    } finally {
+        setIsLoading(false); // Set isLoading back to false
+    }
+}
+
 
   return (
     <div className="App">
