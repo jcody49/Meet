@@ -135,3 +135,18 @@ input[type="number"] {
   100% { transform: rotate(360deg); }
 }
 
+
+
+.event {
+  /* Other styles for the event container */
+}
+
+.event h2 {
+  margin-bottom: 10px; /* Adjust the value as needed */
+}
+
+.event .details {
+  margin-top: 10px; /* Adjust the value as needed */
+}
+
+/* Any other styles you need */
