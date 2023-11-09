@@ -3,9 +3,10 @@ import EventList from './components/EventList';
 import NumberOfEvents from './components/NumberOfEvents';
 import CityEventsChart from './components/CityEventsChart';
 import EventGenresChart from './components/EventGenresChart';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { extractLocations, getEvents } from './api';
 import { InfoAlert, ErrorAlert, WarningAlert } from './components/Alert';
+import LoadingSpinner from './components/LoadingSpinner';
 
 
 import './App.css';
@@ -14,6 +15,7 @@ import './App.css';
  * Main application component that displays event information and charts.
  */
 const App = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [events, setEvents] = useState([]);
   const [currentNOE, setCurrentNOE] = useState(32);
   const [allLocations, setAllLocations] = useState([]);
@@ -56,6 +58,7 @@ const App = () => {
         {infoAlert.length ? <InfoAlert text={infoAlert} /> : null}
         {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
+        {isLoading && <LoadingSpinner />} {/* Render LoadingSpinner if isLoading is true */}
       </div>
       <CitySearch
         allLocations={allLocations}
