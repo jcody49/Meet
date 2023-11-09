@@ -27,9 +27,10 @@ const Event = ({ event }) => {
         <h2 style={{ color: "#1e847f" }}>{event.summary}</h2>
         <div className="location">{event.location}</div>
 
-        {showDetails && <div className="details">{event.description}
-        <br />
-        <strong>Date and Time:</strong> {formattedDateTime}
+        {showDetails && 
+        <div className="details">{event.description}
+          <br />
+          <strong>Date and Time:</strong> <span className="event-datetime">{formattedDateTime}</span>
         </div>}
         <button className="details-btn" onClick={toggleDetails}>
           {showDetails ? "Hide Details" : "Show Details"}

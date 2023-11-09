@@ -136,11 +136,6 @@ input[type="number"] {
 }
 
 
-
-.event {
-  /* Other styles for the event container */
-}
-
 .event h2 {
   margin-bottom: 10px; /* Adjust the value as needed */
 }
@@ -150,3 +145,7 @@ input[type="number"] {
 }
 
 /* Any other styles you need */
+
+.event-datetime {
+  margin-top: 10px;
+}
