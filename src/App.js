@@ -79,7 +79,7 @@ const App = () => {
       setErrorAlert={setErrorAlert} />
       <div className='charts-container'>
         <CityEventsChart allLocations={allLocations} events={events} />
-        <EventGenresChart allLocations={allLocations} events={events} />
+        {/*<EventGenresChart allLocations={allLocations} events={events} />*/} {/*keep to show pie chart if need be*/}
         <EventGenresBarChart allLocations={allLocations} events={events} />
       </div>
       <EventList events={events} />
